@@ -815,7 +815,7 @@
 									"    jsonData=pm.response.json();\r",
 									"    pm.expect(jsonData).to.have.property(\"token\");\r",
 									"\r",
-									"    pm.collectionVariables.set(\"Admintoken\",jsonData.token);\r",
+									"    pm.environment.set(\"Admintoken\",jsonData.token);\r",
 									"})\r",
 									""
 								],
@@ -925,14 +925,6 @@
 						}
 					},
 					"response": []
-				},
-				{
-					"name": "New Request",
-					"request": {
-						"method": "GET",
-						"header": []
-					},
-					"response": []
 				}
 			],
 			"auth": {
@@ -971,10 +963,28 @@
 			]
 		}
 	],
-	"variable": [
+	"event": [
 		{
-			"key": "Admintoken",
-			"value": ""
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"requests": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"requests": {},
+				"exec": [
+					""
+				]
+			}
 		}
 	]
 }
